@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Background with animated text */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #0f172a, #1e293b);
+    overflow: hidden;
+}
+
+/* moving background text */
+body::before {
+    content: "SHUEB SHEIKH • THE CODER • SHUEB SHEIKH • THE CODER";
+    position: absolute;
+    font-size: 60px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.04);
+    white-space: nowrap;
+    animation: slide 20s linear infinite;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+/* Calculator box */
+.calculator {
+    width: 320px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    z-index: 1;
+    animation: pop 1s ease;
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Display */
+#display {
+    width: 100%;
+    height: 55px;
+    border: none;
+    outline: none;
+    background: #f1f5f9;
+    border-radius: 10px;
+    font-size: 22px;
+    padding: 10px;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+/* Buttons grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Button common style */
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #e2e8f0;
+    transition: all 0.25s ease;
+}
+
+/* Hover animation */
+button:hover {
+    background: #c7d2fe;
+    transform: translateY(-3px);
+}
+
+/* Operator buttons */
+.action {
+    background: #6366f1;
+    color: white;
+}
+
+.action:hover {
+    background: #4f46e5;
+}
+
+/* Equal button */
+.equal {
+    background: #22c55e;
+    color: white;
+    grid-row: span 2;
+}
+
+.equal:hover {
+    background: #16a34a;
+}
+
+/* Zero button */
+.zero {
+    grid-column: span 2;
+}
